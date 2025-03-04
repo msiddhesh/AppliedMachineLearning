@@ -1,0 +1,15 @@
+artifact_uri: file:///e:/Sem%203/AppliedMachineLearning/Assignment%202/mlruns/0/4927d3398041499b831046ef73e581d8/artifacts
+end_time: 1741109590428
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4927d3398041499b831046ef73e581d8
+run_name: Logistic Regression
+run_uuid: 4927d3398041499b831046ef73e581d8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741109586915
+status: 3
+tags: []
+user_id: mahes

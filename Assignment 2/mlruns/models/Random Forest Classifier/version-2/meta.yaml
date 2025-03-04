@@ -1,0 +1,16 @@
+aliases: []
+creation_timestamp: 1741109594355
+current_stage: Staging
+description: null
+last_updated_timestamp: 1741109967163
+name: Random Forest Classifier
+run_id: d0bc5830a9a2420d90b891af03926cda
+run_link: null
+source: file:///e:/Sem%203/AppliedMachineLearning/Assignment%202/mlruns/0/d0bc5830a9a2420d90b891af03926cda/artifacts/Random
+  Forest Classifier_val
+status: READY
+status_message: null
+storage_location: file:///e:/Sem%203/AppliedMachineLearning/Assignment%202/mlruns/0/d0bc5830a9a2420d90b891af03926cda/artifacts/Random
+  Forest Classifier_val
+user_id: null
+version: 2

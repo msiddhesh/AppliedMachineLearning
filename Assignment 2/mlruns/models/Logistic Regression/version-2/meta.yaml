@@ -1,0 +1,16 @@
+aliases: []
+creation_timestamp: 1741109590408
+current_stage: Staging
+description: null
+last_updated_timestamp: 1741109967145
+name: Logistic Regression
+run_id: 4927d3398041499b831046ef73e581d8
+run_link: null
+source: file:///e:/Sem%203/AppliedMachineLearning/Assignment%202/mlruns/0/4927d3398041499b831046ef73e581d8/artifacts/Logistic
+  Regression_val
+status: READY
+status_message: null
+storage_location: file:///e:/Sem%203/AppliedMachineLearning/Assignment%202/mlruns/0/4927d3398041499b831046ef73e581d8/artifacts/Logistic
+  Regression_val
+user_id: null
+version: 2

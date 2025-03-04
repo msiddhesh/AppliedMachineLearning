@@ -1,0 +1,16 @@
+aliases: []
+creation_timestamp: 1741109570289
+current_stage: None
+description: null
+last_updated_timestamp: 1741109570289
+name: Support Vector Classifier
+run_id: c5006a16f74d4e468bd42e85846d6afb
+run_link: null
+source: file:///e:/Sem%203/AppliedMachineLearning/Assignment%202/mlruns/0/c5006a16f74d4e468bd42e85846d6afb/artifacts/Support
+  Vector Classifier_val
+status: READY
+status_message: null
+storage_location: file:///e:/Sem%203/AppliedMachineLearning/Assignment%202/mlruns/0/c5006a16f74d4e468bd42e85846d6afb/artifacts/Support
+  Vector Classifier_val
+user_id: null
+version: 1

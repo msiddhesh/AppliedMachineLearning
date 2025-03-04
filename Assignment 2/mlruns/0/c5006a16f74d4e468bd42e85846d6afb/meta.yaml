@@ -1,0 +1,15 @@
+artifact_uri: file:///e:/Sem%203/AppliedMachineLearning/Assignment%202/mlruns/0/c5006a16f74d4e468bd42e85846d6afb/artifacts
+end_time: 1741109570300
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c5006a16f74d4e468bd42e85846d6afb
+run_name: Support Vector Classifier
+run_uuid: c5006a16f74d4e468bd42e85846d6afb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741109565184
+status: 3
+tags: []
+user_id: mahes

@@ -1,0 +1,15 @@
+artifact_uri: file:///e:/Sem%203/AppliedMachineLearning/Assignment%202/mlruns/0/d0bc5830a9a2420d90b891af03926cda/artifacts
+end_time: 1741109594373
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d0bc5830a9a2420d90b891af03926cda
+run_name: Random Forest Classifier
+run_uuid: d0bc5830a9a2420d90b891af03926cda
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741109590432
+status: 3
+tags: []
+user_id: mahes
