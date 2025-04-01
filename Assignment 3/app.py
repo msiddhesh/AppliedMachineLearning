@@ -1,37 +1,46 @@
 from flask import Flask, request, jsonify
 import joblib
-from score import score
+from score import score  # Ensure score.py is in the same directory or correctly referenced
+import warnings
+warnings.filterwarnings("ignore")
+
 
 app = Flask(__name__)
 
 # Load the trained model using joblib
 MODEL_PATH = r'E:\Sem 4\AML ASSIGNEMNT\AppliedMachineLearning\Assignment 3\best_spam_model.joblib'
-
-try:
-    model = joblib.load(MODEL_PATH)
-    print("Loaded trained model from 'best_spam_model.joblib'")
-except Exception as e:
-    print(f"Error loading model: {e}")
-    model = None
-    print("Will use the model loading logic in score.py instead")
+model = joblib.load(MODEL_PATH)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        text = request.form.get('text', '')
-        
-        if not text:
-            return jsonify({"error": "No input text provided"}), 400
-        
-        prediction, probability = score(text, model, 0.55)
+        try:
+            # Handle both JSON and form-data inputs
+            if request.is_json:
+                data = request.get_json()
+                if "text" not in data or not data["text"].strip():
+                    return jsonify({"error": "No input text provided"}), 400  # 🔥 Fix here
+                text = data["text"].strip()
+            else:
+                text = request.form.get("text", "").strip()
+                if not text:
+                    return jsonify({"error": "No input text provided"}), 400  # 🔥 Fix here
 
-        response = {
-            "prediction": "HAM" if bool(prediction)== False else "SPAM",  # Ensure JSON serializability
-            "propensity": float(probability)  # Ensure JSON serializability
-        }
+            # Ensure model is loaded
+            if model is None:
+                return jsonify({"error": "Model not loaded"}), 500
+
+            # Get prediction
+            prediction, probability = score(text, model, 0.55)
+
+            return jsonify({
+                "prediction": "SPAM" if prediction else "HAM",
+                "propensity": float(probability)
+            })
         
-        return jsonify(response)
-    
+        except Exception as e:
+            return jsonify({"error": f"Internal Server Error: {str(e)}"}), 500
+
     return """
         <!DOCTYPE html>
         <html lang="en">
@@ -39,23 +48,6 @@ def home():
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Spam Classifier</title>
-            <style>
-                body {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh;
-                    margin: 0;
-                    flex-direction: column;
-                }
-                h1 {
-                    text-align: center;
-                    margin-top: 20px;
-                }
-                form {
-                    text-align: center;
-                }
-            </style>
         </head>
         <body>
             <h1>Spam Classifier</h1>
