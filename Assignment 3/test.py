@@ -2,13 +2,13 @@ import pytest
 from score import score
 import joblib
 import requests
-import os
-import sys
 import signal
 import time
 import subprocess
 import warnings
 import numpy
+import pytest
+from app import app
 warnings.filterwarnings("ignore")
 
 # Load model using joblib
@@ -99,8 +99,7 @@ def test_flask():
 
     process.terminate()
 
-import pytest
-from app import app
+# Automates testing of  Flask app
 
 @pytest.fixture
 def client():
