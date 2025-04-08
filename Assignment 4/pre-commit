@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Get the current branch name
+branch=$(git symbolic-ref --short HEAD)
+
+# Only run tests if committing to main branch
+if [ "$branch" = "main" ]; then
+  echo "Committing to main branch, running tests..."
+  
+  # Run pytest with coverage
+  python -m pytest test.py -v --cov=. --cov-report=term > coverage.txt
+  
+  # Check if tests passed
+  if [ $? -ne 0 ]; then
+    echo "Tests failed! Commit aborted."
+    exit 1
+  fi
+  
+  # Add coverage.txt to the commit
+  git add coverage.txt
+  
+  echo "Tests passed. Proceeding with commit."
+fi
+
+# If we reach here, tests passed or we're not on main branch
+exit 0
